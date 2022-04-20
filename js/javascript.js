@@ -30,32 +30,32 @@ $(function() {
     $('.sportBtn').mouseenter(function(){
         $('.topGameList,.topGameList .sport').addClass('display');
         $('.topGameList .sport').siblings().removeClass('display');
-        $('.topGameList .prev,.topGameList .next').removeClass('display');
+        // $('.topGameList .prev,.topGameList .next').removeClass('display');
     })
     $('.liveBtn').mouseenter(function(){
         $('.topGameList,.topGameList .live').addClass('display');
         $('.topGameList .live').siblings().removeClass('display');
-        $('.topGameList .prev,.topGameList .next').removeClass('display');
+        // $('.topGameList .prev,.topGameList .next').removeClass('display');
     })
     $('.slotBtn').mouseenter(function(){
         $('.topGameList,.topGameList .slot').addClass('display');
         $('.topGameList .slot').siblings().removeClass('display');
-        $('.topGameList .prev,.topGameList .next').addClass('display');
+        // $('.topGameList .prev,.topGameList .next').removeClass('display');
     })
     $('.lotteryBtn').mouseenter(function(){
         $('.topGameList,.topGameList .lottery').addClass('display');
         $('.topGameList .lottery').siblings().removeClass('display');
-        $('.topGameList .prev,.topGameList .next').removeClass('display');
+        // $('.topGameList .prev,.topGameList .next').removeClass('display');
     })
     $('.fishBtn').mouseenter(function(){
         $('.topGameList,.topGameList .fish').addClass('display');
         $('.topGameList .fish').siblings().removeClass('display');
-        $('.topGameList .prev,.topGameList .next').addClass('display');
+        // $('.topGameList .prev,.topGameList .next').removeClass('display');
     })
     $('.boardBtn').mouseenter(function(){
         $('.topGameList,.topGameList .board').addClass('display');
         $('.topGameList .board').siblings().removeClass('display');
-        $('.topGameList .prev,.topGameList .next').addClass('display');
+        // $('.topGameList .prev,.topGameList .next').removeClass('display');
     })
 })
 
@@ -86,7 +86,7 @@ $(function(){
         partners[0].style.transform = "translateX(" + (-190 * n) + "px)";
         console.log(n);
 
-        if(n == 11){
+        if(n == 6){
             n --;
         }
     }
@@ -103,85 +103,102 @@ $(function(){
 })
 
 //slot+fish+board下拉選單寬度+點擊滑動
+// $(function(){
+//     var slot = document.querySelectorAll('.listWrap .slot li');
+//     var slotl = slot.length;
+//     var slwp = document.getElementsByClassName('slot');
+//     slwp[0].style.width = 220 * slotl + 'px'; 
+
+//     var n = 0;
+//     var nt = $('.listWrap .next');
+//     var pv = $('.listWrap .prev');
+//     $(nt).click(function(){
+//         n ++;
+//         slwp[0].style.transform = "translateX(" + (-220 * n) + "px)";
+
+//         if(n == 1){
+//             n --;
+//         }
+//     })
+//     $(pv).click(function(){
+//         n --;
+//         slwp[0].style.transform = "translateX(" + (-220 * n) + "px)";
+
+//         if(n == -1){
+//             slwp[0].style.transform = "translateX(" + (0) + "px)";
+//             n ++;
+//         }
+//     })
+// })
+// $(function(){
+//     var fish = document.querySelectorAll('.listWrap .fish li');
+//     var fishl = fish.length;
+//     var fhwp = document.getElementsByClassName('fish');
+//     fhwp[0].style.width = 220 * fishl + 'px'; 
+
+//     var n = 0;
+//     var nt = $('.listWrap .next');
+//     var pv = $('.listWrap .prev');
+//     $(nt).click(function(){
+//         n ++;
+//         fhwp[0].style.transform = "translateX(" + (-220 * n) + "px)";
+
+//         if(n == 1){
+//             n --;
+//         }
+//     })
+//     $(pv).click(function(){
+//         n --;
+//         fhwp[0].style.transform = "translateX(" + (-220 * n) + "px)";
+
+//         if(n == -1){
+//             fhwp[0].style.transform = "translateX(" + (0) + "px)";
+//             n ++;
+//         }
+//     })
+// })
+// $(function(){
+//     var board = document.querySelectorAll('.listWrap .board li');
+//     var boardl = board.length;
+//     var bdwp = document.getElementsByClassName('board');
+//     bdwp[0].style.width = 220 * boardl + 'px'; 
+
+//     var n = 0;
+//     var nt = $('.listWrap .next');
+//     var pv = $('.listWrap .prev');
+//     $(nt).click(function(){
+//         n ++;
+//         bdwp[0].style.transform = "translateX(" + (-220 * n) + "px)";
+
+//         if(n == 14){
+//             n --;
+//         }
+//     })
+//     $(pv).click(function(){
+//         n --;
+//         bdwp[0].style.transform = "translateX(" + (-220 * n) + "px)";
+
+//         if(n == -1){
+//             bdwp[0].style.transform = "translateX(" + (0) + "px)";
+//             n ++;
+//         }
+//     })
+// })
+
+//遊戲頁hover時左圖切換
 $(function(){
-    var slot = document.querySelectorAll('.listWrap .slot li');
-    var slotl = slot.length;
-    var slwp = document.getElementsByClassName('slot');
-    slwp[0].style.width = 220 * slotl + 'px'; 
+    $(".gameWrap .livePage .innBox li").hover(function(){
+        var n = $(this).index();
 
-    var n = 0;
-    var nt = $('.listWrap .next');
-    var pv = $('.listWrap .prev');
-    $(nt).click(function(){
-        n ++;
-        slwp[0].style.transform = "translateX(" + (-220 * n) + "px)";
-
-        if(n == 1){
-            n --;
-        }
+        $(".gameWrap .mainImg")
+        .attr("src","../images/platform/live/live_"+ (n + 1) +".png");
     })
-    $(pv).click(function(){
-        n --;
-        slwp[0].style.transform = "translateX(" + (-220 * n) + "px)";
 
-        if(n == -1){
-            slwp[0].style.transform = "translateX(" + (0) + "px)";
-            n ++;
-        }
-    })
-})
-$(function(){
-    var fish = document.querySelectorAll('.listWrap .fish li');
-    var fishl = fish.length;
-    var fhwp = document.getElementsByClassName('fish');
-    fhwp[0].style.width = 220 * fishl + 'px'; 
+    $(".gameWrap .lotteryPage .innBox li").hover(function(){
+        var n = $(this).index();
 
-    var n = 0;
-    var nt = $('.listWrap .next');
-    var pv = $('.listWrap .prev');
-    $(nt).click(function(){
-        n ++;
-        fhwp[0].style.transform = "translateX(" + (-220 * n) + "px)";
-
-        if(n == 1){
-            n --;
-        }
-    })
-    $(pv).click(function(){
-        n --;
-        fhwp[0].style.transform = "translateX(" + (-220 * n) + "px)";
-
-        if(n == -1){
-            fhwp[0].style.transform = "translateX(" + (0) + "px)";
-            n ++;
-        }
-    })
-})
-$(function(){
-    var board = document.querySelectorAll('.listWrap .board li');
-    var boardl = board.length;
-    var bdwp = document.getElementsByClassName('board');
-    bdwp[0].style.width = 220 * boardl + 'px'; 
-
-    var n = 0;
-    var nt = $('.listWrap .next');
-    var pv = $('.listWrap .prev');
-    $(nt).click(function(){
-        n ++;
-        bdwp[0].style.transform = "translateX(" + (-220 * n) + "px)";
-
-        if(n == 14){
-            n --;
-        }
-    })
-    $(pv).click(function(){
-        n --;
-        bdwp[0].style.transform = "translateX(" + (-220 * n) + "px)";
-
-        if(n == -1){
-            bdwp[0].style.transform = "translateX(" + (0) + "px)";
-            n ++;
-        }
+        $(".gameWrap .mainImg")
+        .attr("src","../images/platform/lottery/lottery_"+ (n + 1) +".png");
     })
 })
 

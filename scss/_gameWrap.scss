@@ -6,7 +6,7 @@
     .content {
         width: 100%;
         min-width: 1400px;
-        height: 590px;
+        height: auto;
         margin-bottom: 48px;
 
         &.slotPage {
@@ -20,15 +20,15 @@
             height: 100%;
             margin: 0 auto;
             display: flex;
-            align-items: flex-end;
+            align-items: center;
             justify-content: space-between;
-            padding-left: 100px;
+            padding: 70px 0 0 100px;
             box-sizing: border-box;
         }
 
         .textBox {
             width: 684px;
-            height: 490px;
+            height: auto;
 
             .title {
                 display: flex;
@@ -50,7 +50,7 @@
 
             .mainCnt {
                 margin: 50px 0;
-                width: 660px;
+                width: 630px;
                 letter-spacing: 1px;
                 line-height: 24px;
                 font-size: 14px;
@@ -71,44 +71,27 @@
                     width: 100%;
                     height: auto;
                     display: flex;
+                    flex-wrap: wrap;
                     
                     li {
-                        width: auto;
-                        height: auto;
                         cursor: pointer;
+                        margin: 0 15px 35px 0;
+
+                        &:hover,&.active,&.active {
+
+                            img {
+                                object-position: bottom;
+                            }
+                        }
 
                         p {
                             width: 100%;
                             text-align: center;
-                            font-size: 14px;
+                            font-size: 16px;
+                            font-weight: bold;
                             color: $fontColor_10;
-                            padding-top: 10px;
-                        }
-
-                        //for live真人
-                        .imgBox {
-                            border: solid 1px $borderColor_2;
-                            border-radius: 5px;
-                            box-shadow: 0 5px 10px 0 $boxShadow_2;
-                            background: $linear_2;
-                            box-sizing: border-box;
-                            cursor: pointer;
-                        }
-                    }
-                }
-            }
-        }
-
-        &.livePage {
-
-            .btnBox {
-    
-                .innBox {
-    
-                    ul {
-                        
-                        li {
-                            margin: 0 15px 5px 0;
+                            padding-top: 5px;
+                            letter-spacing: 1px;
                         }
                     }
                 }
