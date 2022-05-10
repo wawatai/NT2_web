@@ -1,6 +1,6 @@
 header {
     width: 100%;
-    height: 160px;
+    height: 125px;
     background: $backgroundColor_1;
     position: relative;
 
@@ -14,18 +14,19 @@ header {
         justify-content: space-between;
         
         //左
-        .brad {
-            font-size: 22px;
-            font-weight: bold;
+        .langBox {
+            width: auto;
+            height: 100%;
+            padding: 0 20px;
+            border: solid 1px $borderColor_1;
+            border-width: 0 1px;
             display: flex;
             align-items: center;
-            color: $fontColor_1;
 
-            //時間
-            .time {
-                font-size: 16px;
-                margin-left: 10px;
-                color: $fontColor_1;
+            select {
+                width: auto;
+                height: auto;
+                @include langStyle;
             }
         }
 
@@ -255,14 +256,20 @@ header {
                     }
                 }
                 
-                //語言列
-                &.lang {
+                //線上客服
+                &.service {
                     display: flex;
+                    cursor: pointer;
+
+                    &:hover,&:active,&.active {
+                        background: $backgroundColor_5;
+                    }
                     
-                    select {
-                        width: auto;
-                        height: auto;
-                        @include langStyle;
+                    a {
+                        color: $fontColor_1;
+                        font-size: 14px;
+                        font-weight: bold;
+                        text-decoration: none;
                     }
                 }
             }
@@ -307,13 +314,13 @@ header {
     //跑馬燈
     .marqueeArea {
         width: 100%;
-        height: 35px;
+        height: auto;
         background: $backgroundColor_3;
         box-shadow: 0 5px 10px -5px $boxShadow_3;
 
         .center {
             width: 1400px;
-            height: 100%;
+            height: 35px;
             margin: 0 auto;
 
             .marqueeWrap {

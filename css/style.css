@@ -59,6 +59,11 @@ header .marquee_ic {
   background-size: 100%;
 }
 
+.mainWrap .marquee_ic {
+  background: url("../images/icon/svg/marquee.svg") no-repeat;
+  background-size: 100%;
+}
+
 .topGameList .prev, .topGameList .next {
   background: url("../images/icon/svg/arrow_g.svg") no-repeat;
   background-size: 100%;
@@ -782,7 +787,7 @@ html body {
 }
 html body header {
   width: 100%;
-  height: 160px;
+  height: 125px;
   background: #333333;
   position: relative;
 }
@@ -800,21 +805,31 @@ html body header .top {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-html body header .top .brad {
-  font-size: 22px;
-  font-weight: bold;
+html body header .top .langBox {
+  width: auto;
+  height: 100%;
+  padding: 0 20px;
+  border: solid 1px #ffffff4d;
+  border-width: 0 1px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: #ffffff;
 }
-html body header .top .brad .time {
-  font-size: 16px;
-  margin-left: 10px;
+html body header .top .langBox select {
+  width: auto;
+  height: auto;
+  background: none;
+  border: none;
   color: #ffffff;
+  cursor: pointer;
+  font-size: 14px;
+}
+html body header .top .langBox select option {
+  background: #ffffff;
+  color: #333333;
 }
 html body header .top .user {
   width: auto;
@@ -1046,23 +1061,20 @@ html body header .top .user li:not(.platform).infoPart:nth-of-type(4):hover, htm
 html body header .top .user li:not(.platform).infoPart:hover, html body header .top .user li:not(.platform).infoPart:active, html body header .top .user li:not(.platform).infoPart.active {
   background: #5d4614;
 }
-html body header .top .user li:not(.platform).lang {
+html body header .top .user li:not(.platform).service {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-html body header .top .user li:not(.platform).lang select {
-  width: auto;
-  height: auto;
-  background: none;
-  border: none;
-  color: #ffffff;
   cursor: pointer;
-  font-size: 14px;
 }
-html body header .top .user li:not(.platform).lang select option {
-  background: #ffffff;
-  color: #333333;
+html body header .top .user li:not(.platform).service:hover, html body header .top .user li:not(.platform).service:active, html body header .top .user li:not(.platform).service.active {
+  background: #5d4614;
+}
+html body header .top .user li:not(.platform).service a {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
 }
 html body header .gameNav {
   width: 100%;
@@ -1108,14 +1120,14 @@ html body header .gameNav .center ul li {
 }
 html body header .marqueeArea {
   width: 100%;
-  height: 35px;
+  height: auto;
   background: #ffffff;
   -webkit-box-shadow: 0 5px 10px -5px #00000033;
           box-shadow: 0 5px 10px -5px #00000033;
 }
 html body header .marqueeArea .center {
   width: 1400px;
-  height: 100%;
+  height: 35px;
   margin: 0 auto;
 }
 html body header .marqueeArea .center .marqueeWrap {
@@ -1376,8 +1388,67 @@ html body .sideBar .rightSide li i {
 html body .mainWrap {
   width: 100%;
   height: auto;
-  padding: 50px 0;
+  padding-bottom: 50px;
   background: #f4f4f4;
+}
+html body .mainWrap .marqueeArea {
+  width: 100%;
+  height: auto;
+  padding: 15px 0;
+}
+html body .mainWrap .marqueeArea .center {
+  width: 1400px;
+  height: 35px;
+  margin: 0 auto;
+}
+html body .mainWrap .marqueeArea .center .marqueeWrap {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #ffffff;
+  -webkit-box-shadow: 0 5px 10px -5px #00000033;
+          box-shadow: 0 5px 10px -5px #00000033;
+  border-radius: 35px;
+}
+html body .mainWrap .marqueeArea .center .marqueeWrap .marquee_ic {
+  width: 18px;
+  height: 18px;
+  margin: 0 8px 0 15px;
+}
+html body .mainWrap .marqueeArea .center .marqueeWrap .marquee {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+html body .mainWrap .marqueeArea .center .marqueeWrap .marquee p {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  padding-left: 100%;
+  -webkit-animation: marquee 10s linear infinite;
+          animation: marquee 10s linear infinite;
+  white-space: nowrap;
+}
+@keyframes marquee {
+  0% {
+    -webkit-transform: translate(0%);
+            transform: translate(0%);
+  }
+  100% {
+    -webkit-transform: translate(-100%);
+            transform: translate(-100%);
+  }
 }
 html body .mainWrap .center {
   width: 1400px;
@@ -1535,53 +1606,24 @@ html body footer .footerList {
   background: #e11515;
 }
 html body footer .footerList .center {
-  width: 1400px;
-  height: auto;
-  padding: 40px 0;
+  width: 1000px;
+  height: 80px;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
-html body footer .footerList .center ul li {
+html body footer .footerList .center a {
   color: #ffffff;
+  font-size: 16px;
   font-weight: bold;
-  cursor: pointer;
-  letter-spacing: 1px;
-}
-html body footer .footerList .center ul li.title {
-  margin-bottom: 24px;
-  font-size: 14px;
-}
-html body footer .footerList .center ul li:last-child p, html body footer .footerList .center ul li:last-child button {
-  margin: 0;
-}
-html body footer .footerList .center ul li p {
-  font-size: 13px;
-  opacity: 0.7;
-  margin-bottom: 10px;
-}
-html body footer .footerList .center ul li button {
-  width: 202px;
-  height: 37px;
-  margin-bottom: 10px;
-  background: none;
-  border: solid 1px #e98a8a;
-  border-radius: 3px;
-  color: #ffffff;
-  font-size: 14px;
-  letter-spacing: 1px;
-}
-html body footer .footerList .center ul li button:hover, html body footer .footerList .center ul li button:active, html body footer .footerList .center ul li button.active {
-  background: #a31414;
-}
-html body footer .footerList .center ul li button i {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  vertical-align: top;
+  text-decoration: none;
 }
 html body .filter {
   display: none;

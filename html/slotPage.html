@@ -13,13 +13,17 @@
     <script src="../js/javascript.js"></script>
     <link rel="shortcut icon" href="../images/myIco.ico" type="image/x-icon">
 </head>
-<body onload="currentTime()">
+<body>
     <header>
         <div class="top">
-            <span class="brad">
-                TONG BOU
-                <span class="time"></span>
-            </span>
+            <div class="langBox">
+                <select>
+                    <option>繁體中文</option>
+                    <option>简体中文</option>
+                    <option>ENGLISH</option>
+                    <option>日本語</option>
+                </select>
+            </div>
             <ul class="user userInfo">
                 <li class="loginPart">
                     <form class="loginForm">
@@ -187,13 +191,8 @@
                     <i class="icon logout_ic"></i>
                     登出
                 </li>
-                <li class="lang">
-                    <select>
-                        <option>繁體中文</option>
-                        <option>简体中文</option>
-                        <option>ENGLISH</option>
-                        <option>日本語</option>
-                    </select>
+                <li class="service">
+                    <a href="#">線上客服</a>
                 </li>
             </ul>
         </div>
@@ -1345,63 +1344,13 @@
         </div>
         <div class="footerList">
             <div class="center">
-                <ul>
-                    <li class="title openNews">最新公告</li>
-                    <li class="openNews">
-                        <p>熱門公告</p>
-                    </li>
-                    <li class="openNews">
-                        <p>一般公告</p>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="title" onclick="window.location.href='./vip.html'">VIP會員</li>
-                    <li onclick="window.location.href='./vip.html'">
-                        <p>我的VIP等級</p>
-                    </li>
-                    <li onclick="window.location.href='./vip.html'">
-                        <p>VIP 詳情</p>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="title" onclick="window.location.href='./help.html'">幫助中心</li>
-                    <li onclick="window.location.href='./help.html'">
-                        <p>新手幫助</p>
-                    </li>
-                    <li onclick="window.location.href='./help.html'">
-                        <p>常見問題</p>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="title" onclick="window.location.href='./help.html'">關於我們</li>
-                    <li onclick="window.location.href='./help.html'">
-                        <p>服務條款</p>
-                    </li>
-                    <li onclick="window.location.href='./help.html'">
-                        <p>隱私條款</p>
-                    </li>
-                    <li onclick="window.location.href='./help.html'">
-                        <p>責任博彩</p>
-                    </li>
-                    <li onclick="window.location.href='./help.html'">
-                        <p>安全性</p>
-                    </li>
-                    <li onclick="window.location.href='./help.html'">
-                        <p>相關規則</p>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="title">加入我們</li>
-                    <li>
-                        <button>代理合作共創未來</button>
-                    </li>
-                    <li>
-                        <button>
-                            <i></i>
-                            24小時線上客服服務
-                        </button>
-                    </li>
-                </ul>
+                <a href="#">服務條款</a>
+                <a href="#">隱私政策</a>
+                <a href="#">責任博彩</a>
+                <a href="#">安全性</a>
+                <a href="#">免責聲明</a>
+                <a href="#">新手幫助</a>
+                <a href="#">常見問題</a>
             </div>
         </div>
     </footer>
